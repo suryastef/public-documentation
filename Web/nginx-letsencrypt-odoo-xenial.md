@@ -3,6 +3,7 @@
 1. Install Nginx and Certbot
 
 	```
+	apt update
 	apt install -y software-properties-common
 	add-apt-repository ppa:certbot/certbot
 	apt update
