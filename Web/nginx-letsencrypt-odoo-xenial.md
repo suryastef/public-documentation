@@ -22,7 +22,7 @@
 	...
 	```
 	
-	Replace the underscore character with your domains
+	Replace the underscore character with your domains:
 	
 	```
 	...
