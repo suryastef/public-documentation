@@ -9,7 +9,9 @@
 	apt update
 	apt install -y python-certbot-nginx nginx
 	```
-	
+
+---
+
 2. Modify file ```/etc/nginx/sites-available/default``` using editor ```vim``` or ```nano```
 	
 	a. Find line:
@@ -20,7 +22,7 @@
 	...
 	```
 	
-	Replace the underscore character (_) with your domains
+	Replace the underscore character with your domains
 	
 	```
 	...
@@ -28,7 +30,7 @@
 	...
 	```
 	
-	b. Add comment tag to these line:
+	b. Find these line:
 
 	```
 	root /var/www/html;
@@ -40,7 +42,7 @@
     }
 	```
 	
-	Change to
+	Change to:
 	
 	```
 	# root /var/www/html;
@@ -71,11 +73,17 @@
 
 	d. Save and exit editor
 
+---
+
 3. Generate the certificate, make sure port ```80```, and ```443``` are open to public
 
 	```
 	certbot --nginx -d example.com -d www.example.com --agree-tos -m user@example.com --redirect 
 	```
+
+	And follow the instruction.
+
+---
 
 4. If the SSL succesfully obtained, certbot will print th following message:
 
@@ -95,7 +103,7 @@
 	Donating to EFF:                    https://eff.org/donate-le
 	```
 	
-	Note: E-mail address needed to notify when the SSL certificate is expiring
+	Note: You need to enter E-mail address, it used to notify you when the SSL certificate is expiring.
 
 ---
 
