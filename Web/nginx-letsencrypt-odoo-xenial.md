@@ -16,7 +16,7 @@
 	
 	```
 	...
-		server_name _;
+	server_name _;
 	...
 	```
 	
@@ -24,7 +24,7 @@
 	
 	```
 	...
-		server_name example.com www.example.com;
+	server_name example.com www.example.com;
 	...
 	```
 	
