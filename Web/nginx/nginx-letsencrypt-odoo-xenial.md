@@ -118,3 +118,4 @@
 Reference:
 
 - [Odoo nginx reverse proxy](https://linuxize.com/post/configure-odoo-with-nginx-as-a-reverse-proxy/)
+- [Generate Diffie-Hellman](https://sandilands.info/sgordon/diffie-hellman-secret-key-exchange-with-openssl)
