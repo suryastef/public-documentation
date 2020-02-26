@@ -107,6 +107,14 @@
 
 ---
 
+## Optional
+
+1. Manually generate DHParam.pem
+
+	```
+	openssl dhparam -out dhparam.pem 4096
+	```
+
 Reference:
 
 - [Odoo nginx reverse proxy](https://linuxize.com/post/configure-odoo-with-nginx-as-a-reverse-proxy/)
