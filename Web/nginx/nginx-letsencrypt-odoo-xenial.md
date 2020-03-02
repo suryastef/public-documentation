@@ -78,7 +78,7 @@
 3. Generate the certificate, make sure port ```80```, and ```443``` are open to public
 
 	```
-	certbot --nginx -d example.com -d www.example.com --agree-tos -m user@example.com --redirect 
+	certbot --nginx -d example.com -d www.example.com --agree-tos --no-eff-email -m user@example.com --redirect
 	```
 
 	And follow the instruction.
