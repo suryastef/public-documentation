@@ -1,0 +1,46 @@
+# Nginx default
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+	root /var/www/html;
+	index index.html index.htm index.nginx-debian.html;
+	server_name nginx.example.com;
+
+	location / {
+	    try_files $uri $uri/ =404;
+	}
+}
+
+
+# Odoo
+server {
+	listen 80;
+	listen [::]:80;
+	server_name odoo.example.com;
+
+	location / {
+	    proxy_pass  http://localhost:8069;
+	    proxy_next_upstream error timeout invalid_header http_500 http_502 http_503 http_504;
+	    proxy_redirect off;
+
+	    proxy_set_header    Host            $host;
+	    proxy_set_header    X-Real-IP       $remote_addr;
+	    proxy_set_header    X-Forwarded-For $proxy_add_x_forwarded_for;
+	    proxy_set_header    X-Forwarded-Proto https;
+	}
+}
+
+
+# Grafana
+server { 
+	listen 80;
+	listen [::]:80;
+	server_name grafana.example.com;
+
+	location / {
+	    rewrite /(.*) /$1  break;
+	    proxy_pass  http://localhost:3000;
+	    proxy_redirect off;
+	    proxy_set_header Host $host;	
+	}
+}
