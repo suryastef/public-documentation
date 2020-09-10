@@ -23,6 +23,8 @@ server {
 	    proxy_next_upstream error timeout invalid_header http_500 http_502 http_503 http_504;
 	    proxy_redirect off;
 			proxy_read_timeout 300000;
+			client_max_body_size 30000M;
+      client_body_buffer_size 200000k;
 
 	    proxy_set_header    Host            $host;
 	    proxy_set_header    X-Real-IP       $remote_addr;
